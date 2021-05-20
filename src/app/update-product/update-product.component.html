@@ -1,0 +1,62 @@
+<h3>update PRODUCT</h3>
+<div style="width:400px" >   
+    <form #createProductForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="productId">Product ID</label>
+            <input type="text" name="productId" class="form-control" 
+                  placeholder="Enter the product Id" required minlength="0"
+                  #productId="ngModel"
+                  [(ngModel)]= "product.productId" 
+                  [ngClass]= "{'is-invalid':productId?.errors && (productId?.touched || productId?.dirty),
+                  'is-valid':productId?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "productId?.errors?.required">Id is required</strong>
+                    <strong *ngIf="productId?.errors && (productId?.touched || productId?.dirty)">productId not valid</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" name="productName" class="form-control" 
+                  placeholder="Enter the Product Name" 
+                  required [(ngModel)]= "product.productName" #productName="ngModel"
+                  [ngClass]= "{'is-invalid':productName?.errors && (productName?.touched || productName?.dirty),
+                  'is-valid':productName?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "productName?.errors?.required">Product Name is required</strong>
+                  </div>
+        </div>
+
+        <div class="form-group">
+            <label for="productDescription">Product Description</label>
+            <input type="text" name="productDescription" class="form-control" 
+                  placeholder="Enter the product Description" required 
+                  [(ngModel)]= "product.productDescription" #productDescription="ngModel"
+                  [ngClass]= "{'is-invalid':productDescription?.errors && (productDescription?.touched || productDescription?.dirty),
+                  'is-valid':productDescription?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "productDescription?.errors?.required">Product Description is required</strong>
+                  </div>
+        </div>
+
+        <div class="form-group">
+            <label for="productQuantity">Product Quantity</label>
+            <input type="text" name="productQuantity" class="form-control" 
+                  placeholder="Enter the product Quantity" required 
+                  [(ngModel)]= "product.productQuantity" #productQuantity="ngModel"
+                  [ngClass]= "{'is-invalid':productQuantity?.errors && (productQuantity?.touched || productQuantity?.dirty),
+                  'is-valid':productQuantity?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "productQuantity?.errors?.required">Product Quantity is required</strong>
+                  </div>
+        </div>
+        
+        
+
+        <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]="createProductForm.invalid" >update Product</button>
+        <button type="button" class="btn btn-default" (click)= "createProductForm.reset()">Reset</button>
+    </form>
+    <div>
+        <div >
+            <h4>product updated successfully</h4>
+        </div>
+    </div>

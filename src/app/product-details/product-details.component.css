@@ -1,0 +1,19 @@
+.dropdown-item{
+    color: white;
+}
+a:hover {
+    background-color: #32CD32;
+  }
+hr{
+      color: white;
+     
+      background-color: white;
+  }
+.btn{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.btn{
+  font-size: larger;
+  font-weight: bold;
+}

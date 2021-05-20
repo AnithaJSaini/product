@@ -1,0 +1,27 @@
+<p>product-details works!</p>
+<hr>
+<div class="card text-center col-md-3 offset-md-4">
+  <div class="card-body">
+    <h4 class="card-title">Product Details</h4>
+    <div *ngIf="product">
+        <div>
+            <label><b>Product Id :</b></label> {{product.productId}}
+        </div>
+        <div>
+            <label><b>Product Name:</b></label> {{product.productName}}
+        </div>
+        <div>
+            <label><b>Product Description:</b></label> {{product.productDescription}}
+        </div>
+        <div>
+            <label><b>Product Quantity:</b></label> {{product.productQuantity}}
+        </div>
+        <div>
+            <button (click)="updateProduct(product.productId)" class="btn btn-info" style="margin-left:15px">Update</button>
+            <button (click)="deleteProduct(product.productId)" class="btn btn-danger" style="margin-left:15px">Delete</button>
+        </div> 
+    </div>  
+  </div>
+</div>
+
+
